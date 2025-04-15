@@ -1,7 +1,7 @@
 NAME := fixed
 CC := c++
 CFLAGS := -Wall -Werror -Wextra -std=c++98
-SRC := main.cpp Fixed.cpp
+SRC := Fixed.cpp main.cpp
 OBJ := ${SRC:.cpp=.o}
 
 all: ${NAME}
@@ -15,7 +15,7 @@ fclean: clean
 re: fclean all
 
 ${NAME}: ${OBJ}
-	${CC} ${CFLAGS} $< -o ${NAME}
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
 
 %.o: %.cpp
 	${CC} ${CFLAGS} -c $< -o $@
